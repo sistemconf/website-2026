@@ -13,6 +13,7 @@ import mulogo from "../assets/socs/mu.png";
 import qcslogo from "../assets/socs/qcs.png";
 import uglogo from "../assets/socs/ug.png";
 import tcdlogo from "../assets/socs/tcd.png";
+import Xlogo from "../assets/socs/tempX.png";
 
 import lerologo from "../assets/sponsors/lero.png";
 ---
@@ -23,16 +24,18 @@ import lerologo from "../assets/sponsors/lero.png";
 
 <Layout>
   <section id="hero">
-    <h1>
+    <h1 id="h1">
       A tech conference for students <br />
       <span class="colors"> by students </span>
     </h1>
     <p class="details">
-      Saturday 29<sup>th</sup> March 2025<br />
+      ------- --<sup>th</sup> April 2026<br />
       University of Limerick
     </p>
+
+   
     <div class="cta">
-      <a href="#tickets">BUY TICKETS</a>
+      <a href="#tickets">BUY TICKETS NOW</a>
     </div>
   </section>
 
@@ -41,26 +44,32 @@ import lerologo from "../assets/sponsors/lero.png";
   <main>
     <section id="about">
       <div class="stats">
-        <div>
-          <span class="num colors">1</span><span class="unit">Day</span>
+        <div class="sideNum">
+          <span class="num colors ">1</span><span class="unit">Day</span>
         </div>
 
-        <div>
-          <span class="num colors">5</span><span class="unit">Speakers</span>
+        <div id="speakerNum">
+          <span class="num colors "id="frontNum" >-</span><span class="unit">Speakers</span>
         </div>
 
-        <div>
-          <span class="num colors">6</span><span class="unit">Sessions</span>
+        <div  class="sideNum">
+          <span class="num colors">-</span><span class="unit">Sessions</span>
         </div>
+      </div>
+
+
+      <div id="AboutUs">
+        <h2 id="AboutH2">About US</h2>
+        <p>
+        SISTEM is Ireland's most exciting student led tech conference, run (almost)
+        every year by volunteers dedicated to spreading the word about new,
+        exciting developments in the field and inspiring the next generation of
+        hackers, innovators, and entrepreneurs through professional opportunities,industry knowledge, and invaluable networking-all run by students,for students.
+      </p>
 
       </div>
 
-      <p>
-        SISTEM is Ireland's most exciting student tech conference, run (almost)
-        every year by volunteers dedicated to spreading the word about new,
-        exciting developments in the field and inspiring the next generation of
-        hackers, innovators, and entrepreneurs.
-      </p>
+      
     </section>
 
     <section id="socs">
@@ -72,41 +81,44 @@ import lerologo from "../assets/sponsors/lero.png";
           height={80}
         />
         <Image
-          src={ucdlogo}
+          src={Xlogo}
           alt="University College Dublin NetSoc logo"
           height={80}
         />
+        <!-- dcuogo-->
         <Image
-          src={dculogo}
+          src={Xlogo}
           alt="Dublin City University Redbrick logo"
           height={80}
         />
+        <!-- tud-->
         <Image
-          src={tudlogo}
+          src={Xlogo}
           alt="Technological University Dublin CS++ logo"
           height={80}
         />
+        <!-- tcd-->
         <Image
-          src={tcdlogo}
+          src={Xlogo}
           alt="Dublin University Computer Science Society logo"
           height={80}
         />
         <Image
-          src={uglogo}
+          src={Xlogo}
           alt="University of Galway CompSoc logo"
           height={80}
         />
         <Image
-          src={ucclogo}
+          src={Xlogo}
           alt="University College Cork NetSoc logo"
           height={80}
         />
         <Image
-          src={mulogo}
+          src={Xlogo}
           alt="Maynooth University Computer Science Society logo"
           height={80}
         />
-        <Image src={qcslogo} alt="Queen's Computing Society logo" height={50} />
+        <Image src={Xlogo} alt="Queen's Computing Society logo" height={80} />
       </div>
     </section>
 
@@ -116,8 +128,8 @@ import lerologo from "../assets/sponsors/lero.png";
         Each ticket includes <strong
           >full access to all of the conference events, breakfast and lunch, and
           also merch</strong
-        >. Societies buying 20 or more tickets will be billed at the discounted
-        rate of &euro;10 per ticket. Societies may also contact us directly <a
+        >. Societies buying -- or more tickets will be billed at the discounted
+        rate of &euro;-- per ticket. Societies may also contact us directly <a
           href="mailto:sistemconf@gmail.com">over email</a
         >
         to arrange tickets for their members.
@@ -130,14 +142,14 @@ import lerologo from "../assets/sponsors/lero.png";
       <h2>Sponsors</h2>
 
       <div class="cardholder">
-        <a href="https://lero.ie/" target="_blank" rel="noreferrer noopener">
-          <Image src={lerologo} alt="LERO logo" height={50} />
+        <a href="#" target="_blank" rel="noreferrer noopener">
+          <img src="# " alt="Sponsorlogo" height={50} />
         </a>
       </div>
 
       <p>
         Interested in sponsoring SISTEM? <a href="mailto:sistemconf@gmail.com"
-          >Get in touch.</a
+          >Contact Us.</a
         >
       </p>
     </section>
@@ -184,6 +196,7 @@ import lerologo from "../assets/sponsors/lero.png";
     max-width: 768px;
     margin-left: auto;
     margin-right: auto;
+    
   }
 
   #map {
@@ -209,6 +222,10 @@ import lerologo from "../assets/sponsors/lero.png";
   h1 {
     margin: 0px;
     font-size: 3rem;
+     
+
+    /* box-shadow: 0 0 10px 0 rgb(13, 65, 22); */ */
+    /* background-color: #9cbf6d; */
   }
 
   .details {
@@ -227,11 +244,17 @@ import lerologo from "../assets/sponsors/lero.png";
     justify-content: space-evenly;
     font-weight: bold;
     flex-direction: row;
+    /* border: 2px solid #5a8e2f; */
+    /* background-color: #689133; */
+    /* box-shadow: 0 0 10px 0 rgb(13, 65, 22); */
+     
+
 
     .num {
       font-size: 4rem;
+       text-shadow: 1px 8px 4px rgba(0, 0, 0, 0.2);
     }
-
+   
     div {
       display: flex;
       flex-grow: 1;
@@ -239,7 +262,50 @@ import lerologo from "../assets/sponsors/lero.png";
       align-items: center;
       justify-content: space-between;
       margin-bottom: 1rem;
+      padding-bottom: 1em;
+      background-color: #5a8e2f;
+       /* box-shadow: 0px 5px 10px 30px rgb(13, 65, 22);  */
     }
+  }
+  #speakerNum{
+    background-color: #ed9a3b;
+    transform: translateY(60px) scale(5:1);
+      box-shadow: 
+    0 20px 40px rgba(23, 54, 10, 0.4),
+    0 10px 20px rgba(27, 93, 31, 0.2);
+     z-index: 5; 
+  }
+ 
+  .sideNum{
+       background-color: #5a8e2f;
+       box-shadow: 
+    0 20px 40px rgba(23, 54, 10, 0.4),
+    0 10px 20px rgba(27, 93, 31, 0.2);
+       z-index: 4;
+
+  }
+  #AboutUs{
+   padding-top: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  #AboutH2{
+     text-shadow: 10px 5px 3px rgba(87, 171, 89, 0.2);
+    color: #ed9a3b;
+color: linear-gradient(90deg, rgba(237, 154, 59, 1) 0%, rgba(243, 165, 76, 1) 35%, rgba(252, 237, 204, 1) 100%);
+    text-align: center;
+    
+    width: 20%;
+    
+    font-size: 50px;
+    
+
+
+  }
+  #AboutUs p{
+    width: 70%;
   }
 
   .cardholder {
@@ -257,12 +323,20 @@ import lerologo from "../assets/sponsors/lero.png";
     border: 2px solid var(--blue-gradient);
     border-radius: 5px;
   }
+   #frontNum{
+      color: #5A8E2F;
+
+    }
+
 
   .colors {
+    
+    background: #ed9a3b;
     background: linear-gradient(
-      45deg,
-      var(--blue-gradient),
-      var(--green-gradient)
+      90deg,
+      rgba(237, 154, 59, 1) 0%,
+      rgba(243, 165, 76, 1) 35%,
+      rgba(252, 237, 204, 1) 100%
     );
     color: transparent;
     background-clip: text;
@@ -276,13 +350,19 @@ import lerologo from "../assets/sponsors/lero.png";
 
   .cta {
     a {
-      color: white;
+      color: rgb(1, 1, 1);
       /* background: linear-gradient( */
       /*   var(--gr-angle), */
       /*   var(--blue-gradient), */
       /*   var(--green-gradient) */
       /* ); */
-      background-color: var(--blue-gradient);
+      background: #9cbf6d;
+      background: #5a8e2f;
+      background: radial-gradient(
+        circle,
+        rgba(90, 142, 47, 1) 0%,
+        rgba(202, 214, 158, 1) 100%
+      );
       padding: 5px 10px;
       border-radius: 5px;
       font-family: "JetBrains Mono";

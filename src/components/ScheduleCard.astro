@@ -1,145 +1,162 @@
 ---
 import "../styles/globals.css";
 import { Image } from "astro:assets";
-import Sistem from "../assets/sistem-logo-dark.svg";
+// import Sistem from "../assets/sistem-logo-dark.svg";
+import Sistem from "../assets/SISTEM_logo.svg";
 
-const { 
-    title = "TBA", 
-    speaker = "", 
-    startTime = "TBA", 
-    endTime = "TBA", 
-    location = "KBG-12",
-    description = "",
-    imageSrc = Sistem,
-    imageClass = "imageLogo",
-    imageHref = "",
+const {
+  title = "TBA",
+  speaker = "",
+  startTime = "TBA",
+  endTime = "TBA",
+  location = "KBG-12",
+  description = "",
+  imageSrc = Sistem,
+  imageClass = "imageLogo",
+  imageHref = "",
 } = Astro.props;
---- 
-<main>
-    <div class="cardBorderWrap">
-        <div class="card">
-            <div class="row">
-                <div class="col text">
-                    <h2 class="gradientUnderline">[{startTime} - {endTime}] &nbsp; {title}</h2> 
-                    <h3>{speaker} @ {location}</h3>
-                    <p>{description}</p>
-                </div>
-                <div class="col image">
-                    <a href={imageHref || "#"}>
-                        <Image class={imageClass} src={imageSrc} alt="Event Image">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
+---
 
-<style>
+<main>
+  <div class="cardBorderWrap">
+    <div class="card">
+      <div class="row">
+        <div class="col text">
+          <h2 class="gradientUnderline">
+            [{startTime} - {endTime}] &nbsp; {title}
+          </h2>
+          <h3>{speaker} @ {location}</h3>
+          <p>{description}</p>
+        </div>
+        <div class="col image">
+          <a href={imageHref || "#"}>
+            <Image class={imageClass} src={imageSrc} alt="Event Image" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
     main {
-        max-width: 60%;
-        margin-left: auto;
-        margin-right: auto;
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .card {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 3px;
-        z-index: -1;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 3px;
+      z-index: -1;
     }
 
     .cardBorderWrap {
-        position: relative;
-        background: linear-gradient(to right, var(--blue-gradient), var(--green-gradient));
-        padding: 0.2rem;
-        border-radius: 5px;
-        z-index: -2;
+      position: relative;
+      background: #ed9a3b;
+      background: #ed9a3b;
+      background: #ed9a3b;
+      background: linear-gradient(
+        278deg,
+        rgba(237, 154, 59, 1) 0%,
+        rgba(243, 165, 76, 1) 15%,
+        rgba(151, 186, 103, 1) 100%
+      );
+      padding: 0.2rem;
+      border-radius: 5px;
+      z-index: -2;
     }
 
     /* Flexbox Grid */
     .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center; /* Ensures vertical alignment */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center; /* Ensures vertical alignment */
     }
 
     .col {
-        flex: 1;
-        min-width: 0;
+      flex: 1;
+      min-width: 0;
     }
 
     .text {
-        flex: 2;
+      flex: 2;
     }
 
     .image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     /* Default Image Styling (Logos, Event Images) */
     .imageLogo {
-        max-width: 90%;
-        height: auto;
+      max-width: 90%;
+      height: auto;
     }
 
     /* Profile Pictures */
     .pfp {
-        width: 10rem;
-        height: 10rem;
-        border-radius: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border: 10px solid var(--blue-gradient);
-        display: block;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 10px solid #ea6f2d;
+      display: block;
     }
 
     /* Gradient underline for the title */
     .gradientUnderline {
-        text-decoration: none;
-        position: relative;
-        display: inline-block;
+      background-color:;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
     }
 
     .gradientUnderline::before {
-        content: "";
-        position: absolute;
-        top: 100%;
-        width: 100%;
-        left: 0;
-        height: 0.2rem;
-        border-radius: 5px;
-        background: linear-gradient(to right, var(--blue-gradient), var(--green-gradient));
+      content: "";
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      left: 0;
+      height: 0.2rem;
+      border-radius: 5px;
+      background: #f09f43;
+      background: linear-gradient(
+        90deg,
+        rgba(240, 159, 67, 1) 0%,
+        rgba(232, 182, 125, 1) 64%,
+        rgb(99, 199, 112) 100%
+      );
     }
 
-        /* Responsive Adjustments */
-  /* For mobile view adjustments */
+    /* Responsive Adjustments */
+    /* For mobile view adjustments */
     @media screen and (max-width: 768px) {
+      main {
+        max-width: 80%;
+      }
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
 
-        main {
-            max-width: 80%;
-        }
-        .row {
-            flex-direction: column;
-            align-items: center;
-        }
+      .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
 
-        .image {
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            width: 100%;        
-        }
-
-        .pfp {
-            display: block;          
-            margin: 0 auto;         
-            max-width: 100%;   
-            height: auto;     
-        }
+      .pfp {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
     }
-
-</style>
+  </style>
+</main>

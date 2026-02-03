@@ -1,6 +1,6 @@
 ---
 import MenuIcon from "../assets/menu.svg?raw";
-import SISTEMLogo from "../assets/sistem-logo-light.svg?raw";
+import SISTEMLogo from "../assets/SISTEM_logo.svg?raw";
 ---
 
 <header>
@@ -95,7 +95,7 @@ import SISTEMLogo from "../assets/sistem-logo-light.svg?raw";
 
   .logotype {
     display: block;
-    height: 40%;
+    height: 100%;
     width: auto;
 
     svg {
@@ -132,11 +132,17 @@ import SISTEMLogo from "../assets/sistem-logo-light.svg?raw";
     /*   var(--blue-gradient), */
     /*   var(--green-gradient) */
     /* ); */
-    background: var(--blue-gradient);
+    background: #9cbf6d;
+    background: #5a8e2f;
+    background: radial-gradient(
+      circle,
+      rgba(90, 142, 47, 1) 0%,
+      rgba(202, 214, 158, 1) 100%
+    );
     padding: 5px 10px;
     border-radius: 5px;
     font-family: "JetBrains Mono";
-    color: white;
+    color: rgb(13, 11, 11);
     transition:
       all 250ms ease-in-out,
       --gr-angle 250ms ease-in-out;
@@ -212,7 +218,7 @@ import SISTEMLogo from "../assets/sistem-logo-light.svg?raw";
       }
 
       a:hover {
-        background: hsl(196 80% 90%);
+        background: #cad69e;
         text-decoration: none;
       }
     }
