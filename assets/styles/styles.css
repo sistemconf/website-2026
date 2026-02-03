@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", "Roboto", sans, sans-serif;
+}
+
+:root {
+    --blue-gradient: hsl(196 80% 50%);
+    --green-gradient: hsl(150 74% 52%);
+}
+
+/* Site header / navbar (based on reference site) */
+header.site-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    height: 60px;
+    border-bottom: 1px solid #121212;
+    background: transparent;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Keep CTA style consistent for header and hero */
+.nav-links .cta a,
+.cta a,
+.nav-links .cta {
+    background: var(--blue-gradient);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Utilities */
+.lead {
+    max-width: 768px;
+    margin: 0 auto 1rem;
+}
+
+.muted {
+    color: hsl(0 0% 40%);
+}
+
+main {
+    padding: 0 1rem;
+}
+
+/* Layout sections */
+#hero {
+    min-height: 30svh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about {
+    max-width: 768px;
+    margin: 0 auto 2rem;
+}
+
+#sponsors {
+    text-align: center;
+}
+
+#tickets {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Logos grid (becomes flex at very large viewports) */
+.logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: 2rem;
+}
+
+/* Headings & text */
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.details {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Stats block - flattened nested rules */
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    flex-direction: row;
+}
+
+.stats .num {
+    font-size: 4rem;
+}
+
+.stats div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.cardholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+}
+
+.embed {
+    display: block;
+    width: 80%;
+    aspect-ratio: 5 / 1;
+    border: 2px solid var(--blue-gradient);
+    border-radius: 5px;
+}
+
+.colors {
+    background: linear-gradient(45deg, var(--blue-gradient), var(--green-gradient));
+    color: transparent;
+    background-clip: text;
+}
+
+/* Custom property for animated gradient angle */
+@property --gr-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 90deg;
+}
+
+/* Call-to-action link styles (flattened) */
+.cta {
+    margin-bottom: 2rem;
+}
+
+.cta a {
+    color: white;
+    /* Uncomment to use gradient background with angle animation */
+    /* background: linear-gradient(var(--gr-angle), var(--blue-gradient), var(--green-gradient)); */
+    background-color: var(--blue-gradient);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 250ms ease-in-out, --gr-angle 350ms ease-in-out;
+}
+
+.cta a:hover {
+    --gr-angle: 270deg;
+}
+
+/* Navbar component refinements (from reference) */
+.logotype {
+    display: block;
+    height: 40%;
+    width: auto;
+}
+
+.logotype svg {
+    height: 100%;
+    width: auto;
+}
+
+.right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Global link defaults similar to reference */
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+button.menu-toggle {
+    display: none;
+}
+
+ul.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ensure menu opener is hidden by default on larger screens */
+button#menu-opener {
+    display: none;
+}
+
+/* Mobile / small-screen header/nav adjustments inspired by the reference site */
+@media screen and (max-width: 832px) {
+    header.site-header {
+        height: 48px;
+    }
+
+    /* show menu button on small screens */
+    button#menu-opener {
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* Make nav links stack for small screens */
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: white;
+        border-radius: 5px;
+        position: absolute;
+        top: 40px;
+        right: 1rem;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 5px;
+        color: black;
+    }
+
+    .nav-links li a:hover {
+        background: hsl(196 80% 90%);
+        text-decoration: none;
+    }
+
+    /* Mobile menu behavior when a nav controller toggles data-expanded */
+    nav[data-expanded="false"] ul.nav-links {
+        opacity: 0%;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .stats {
+        flex-direction: column;
+    }
+
+    .cardholder {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .embed {
+        width: 80%;
+        aspect-ratio: 2 / 1;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    footer.site-footer {
+        justify-content: space-evenly;
+    }
+
+    footer.site-footer .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer.site-footer .intersocs{
+        margin-top: 1.1rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* preserve explicit layout intent at >=600px */
+    .stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-weight: bold;
+    }
+
+    .cardholder {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .stats {
+        flex-direction: row;
+    }
+
+    .cardholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    section:not(#hero) {
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .logos {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
